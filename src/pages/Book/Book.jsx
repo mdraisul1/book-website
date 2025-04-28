@@ -1,31 +1,25 @@
 import React from 'react'
 
 const Book = ({ singleBook }) => {
+  console.log(singleBook);
  
-  const { author, image, bookName } = singleBook;
+  const { author, image, bookName,tags } = singleBook;
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 border border-gray-300">
       <div className="flex justify-center bg-gray-300 p-3 rounded-lg">
-        <img
-          src={image}
-          alt="Book Cover"
-          className="h-40 object-contain"
-        />
+        <img src={image} alt="Book Cover" className="h-40 object-contain" />
       </div>
 
       <div className="flex gap-2 mt-4">
-        <span className="bg-green-100 text-green-600 text-xs font-semibold px-2 py-1 rounded-full">
-          Young Adult
-        </span>
-        <span className="bg-green-100 text-green-600 text-xs font-semibold px-2 py-1 rounded-full">
-          Identity
-        </span>
+        {tags.map((tag,index) => (
+          <span key={index} className="bg-green-100 text-green-600 text-xs font-semibold px-2 py-1 rounded-full">
+            {tag}
+          </span>
+        ))}
       </div>
 
-      <h2 className="mt-3 text-lg font-semibold text-gray-800">
-        {bookName}
-      </h2>
+      <h2 className="mt-3 text-lg font-semibold text-gray-800">{bookName}</h2>
 
       <p className="text-gray-500 text-sm mt-1">By : {author}</p>
 
