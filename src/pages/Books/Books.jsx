@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { Suspense } from 'react'
+import Book from '../Book/Book'
 
-const Books = () => {
+const Books = ({data}) => {
+    console.log(data)
+
   return (
     <div>
-      <h1>book api data</h1>
+      <h1 className='text-center text-3xl font-bold'>Books</h1>
+      <Suspense fallback={<span className="loading loading-spinner loading-lg"></span>}>
+        <Book data={data}></Book>
+      </Suspense>
     </div>
   )
 }
