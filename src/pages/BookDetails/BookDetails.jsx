@@ -1,6 +1,9 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router'
 import { setItemsData } from '../../utils/AddToData';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
 
 const BookDetails = () => {
     const {id} = useParams();
@@ -21,6 +24,11 @@ const BookDetails = () => {
 
 
     const handleBookStorage = (id) => {
+      Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success",
+      });
       setItemsData(id);
     }
 
