@@ -74,10 +74,10 @@ const BookDetails = () => {
           {/* Buttons */}
           <div className="flex gap-4">
             <button className="px-6 py-2 bg-black text-white rounded hover:bg-gray-800 transition">
-              Read
+              Mar as Read
             </button>
             <button className="px-6 py-2 bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition">
-              Wishlist
+              Add to Wishlist
             </button>
           </div>
         </div>
