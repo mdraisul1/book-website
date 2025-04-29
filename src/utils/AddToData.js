@@ -21,4 +21,4 @@ const setItemsData = (id) => {
     }
 }
 
-export {setItemsData};
+export {setItemsData, getItemsData};
