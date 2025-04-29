@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { getItemsData } from '../../utils/AddToData';
+import Table from '../Table/Table';
 
 const ReadList = () => {
     const [readList, setReadList] = useState([]);
@@ -18,15 +19,17 @@ const ReadList = () => {
     },[])
 
   return (
-    <div>
+    <div className='mx-12 my-8'>
       <Tabs>
         <TabList>
           <Tab>Read a Book</Tab>
           <Tab>Add to Wishlist</Tab>
         </TabList>
 
-        <TabPanel>
-          <h2>Any content: {readList.length}</h2>
+        <TabPanel style={{}} >
+          {
+            readList.map((book, index) => <Table key={index} book={book}></Table>)
+          }
         </TabPanel>
         <TabPanel>
           <h2>Any content 2</h2>
